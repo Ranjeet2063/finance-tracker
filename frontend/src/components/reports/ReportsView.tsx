@@ -20,11 +20,11 @@ export default function ReportsView() {
   if (loading) return <div className="animate-pulse space-y-4">{[1,2].map(i => <div key={i} className="card h-64" />)}</div>;
 
   const chartData = data?.months ? {
-    labels: data.months.map(m => m.monthName),
+    labels: data.months.map((m: any) => m.monthName),
     datasets: [
-      { label: 'Income', data: data.months.map(m => m.income), backgroundColor: 'rgba(34,197,94,0.7)', borderRadius: 6 },
-      { label: 'Expenses', data: data.months.map(m => m.expenses), backgroundColor: 'rgba(239,68,68,0.7)', borderRadius: 6 },
-      { label: 'Net', data: data.months.map(m => m.net), backgroundColor: 'rgba(99,102,241,0.7)', borderRadius: 6 }
+      { label: 'Income', data: data.months.map((m: any) => m.income), backgroundColor: 'rgba(34,197,94,0.7)', borderRadius: 6 },
+      { label: 'Expenses', data: data.months.map((m: any) => m.expenses), backgroundColor: 'rgba(239,68,68,0.7)', borderRadius: 6 },
+      { label: 'Net', data: data.months.map((m: any) => m.net), backgroundColor: 'rgba(99,102,241,0.7)', borderRadius: 6 }
     ]
   } : null;
 
